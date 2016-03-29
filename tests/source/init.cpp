@@ -43,3 +43,24 @@ SCENARIO("Matrix +", "[addition]") {
 	REQUIRE(result == expected);
 }
 
+SCENARIO("Matrix *", "[multiplication]") {
+	Matrix A(2, 2);
+	A.fill("A2x2.txt");
+	Matrix B(2, 2);
+	B.fill("B2x2.txt");
+	Matrix expected(2, 2);
+	expected.fill("A*B2x2.txt");
+	Matrix result = A * B;
+	REQUIRE(result == expected);
+}
+
+SCENARIO("Matrix[]", "[ operator [] ]"){
+	Matrix matrix(2, 2);
+	matrix.fill("A2x2.txt");
+	int first_line[2] = {1, 1};
+	int second_line[2] = {2, 2};
+	REQUIRE( matrix[0] == first_line );
+	REQUIRE( matrix[1] == second_line );
+	
+}
+
