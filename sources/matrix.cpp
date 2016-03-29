@@ -91,6 +91,19 @@ Matrix Matrix :: operator*(const Matrix &m) const{
 	}
 	return result;
 }
+bool Matrix :: operator==(const Matrix & matrix) const{
+    if ( lines != matrix.lines || columns != matrix.columns ) {
+        return false;
+    }
+    for (unsigned int i = 0; i < lines; ++i) {
+        for (unsigned int j = 0; j < columns; ++j) {
+            if ( elements[i][j] != matrix.elements[i][j] ) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
 Matrix :: ~Matrix(){
 	for (int i = 0; i < lines; i++){
 		delete [] elements[i];
