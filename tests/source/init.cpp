@@ -30,6 +30,16 @@ SCENARIO ("Matrix =", "[operator =]"){
 	REQUIRE( first[0][1] == 1 );
 	REQUIRE( first[1][0] == 2 );
 	REQUIRE( first[1][1] == 2 );
+}
 
+SCENARIO("Matrix +", "[addition]") {
+	Matrix A(2, 2);
+	A.fill("A2x2.txt");
+	Matrix B(2, 2);
+	B.fill("B2x2.txt");
+	Matrix expected(2, 2);
+	expected.fill("A+B2x2.txt");
+	Matrix result = A + B;
+	REQUIRE(result == expected);
 }
 
