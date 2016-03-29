@@ -40,7 +40,7 @@ SCENARIO("Matrix +", "[addition]") {
 	Matrix expected(2, 2);
 	expected.fill("A+B2x2.txt");
 	Matrix result = A + B;
-	REQUIRE(result == expected);
+	REQUIRE(result == expected[0][0]);
 }
 
 SCENARIO("Matrix *", "[multiplication]") {
@@ -51,7 +51,7 @@ SCENARIO("Matrix *", "[multiplication]") {
 	Matrix expected(2, 2);
 	expected.fill("A*B2x2.txt");
 	Matrix result = A * B;
-	REQUIRE(result == expected);
+	REQUIRE(result[0][0] == expected[0][0]);
 }
 
 SCENARIO("Matrix[]", "[ operator [] ]"){
