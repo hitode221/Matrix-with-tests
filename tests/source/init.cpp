@@ -21,3 +21,12 @@ SCENARIO("Matrix init", "[init]") {
 		}
 	}
 }
+
+SCENARIO ("Matrix fill", "[fill]") {
+	Matrix matrix(2, 2);
+	matrix.fill("A2x2.txt");
+	REQUIRE( matrix[0][0] == 1 );
+	REQUIRE( matrix[0][1] == 1 );
+	REQUIRE( matrix[1][0] == 2 );
+	REQUIRE( matrix[1][1] == 2 );
+}
