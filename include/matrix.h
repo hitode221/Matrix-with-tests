@@ -19,7 +19,7 @@ public:
 	int* operator[](int index) const;
 	Matrix operator+(const Matrix& m) const; 
 	Matrix operator*(const Matrix& m) const;
-	bool operator==(const Matrix &matrix) const; 
+	//bool operator==(const Matrix &matrix) const; 
 	int getLines() const;
 	int getColumns() const;
 	~Matrix();
