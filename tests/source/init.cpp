@@ -21,3 +21,15 @@ SCENARIO ("Matrix fill", "[fill]") {
 	REQUIRE( matrix[1][1] == 2 );
 }
 
+SCENARIO ("Matrix =", "[operator =]"){
+	Matrix first(2, 2);
+	Matrix second(2, 2);
+	second.fill("A2x2.txt");
+	first = second;
+	REQUIRE( first[0][0] == 1 );
+	REQUIRE( first[0][1] == 1 );
+	REQUIRE( first[1][0] == 2 );
+	REQUIRE( first[1][1] == 2 );
+
+}
+
