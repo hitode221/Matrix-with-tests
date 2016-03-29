@@ -21,9 +21,3 @@ SCENARIO ("Matrix fill", "[fill]") {
 	REQUIRE( matrix[1][1] == 2 );
 }
 
-SCENARIO ("Matrix fill random", "[fill random]"){
-	Matrix matrix(1, 1);
-	matrix.fillRandom();
-	REQUIRE( matrix[0][0] != nullptr );
-}
-
