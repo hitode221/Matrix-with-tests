@@ -91,7 +91,7 @@ Matrix Matrix :: operator*(const Matrix &m) const{
 	}
 	return result;
 }
-bool Matrix :: operator==(const Matrix & matrix) const{
+/*bool Matrix :: operator==(const Matrix & matrix) const{
     if ( lines != matrix.lines || columns != matrix.columns ) {
         return false;
     }
@@ -103,7 +103,7 @@ bool Matrix :: operator==(const Matrix & matrix) const{
         }
     }
     return true;
-}
+}*/
 Matrix :: ~Matrix(){
 	for (int i = 0; i < lines; i++){
 		delete [] elements[i];
