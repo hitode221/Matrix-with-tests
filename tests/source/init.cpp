@@ -19,6 +19,12 @@ SCENARIO ("Matrix fill", "[fill]") {
 	REQUIRE( matrix[0][1] == 1 );
 	REQUIRE( matrix[1][0] == 2 );
 	REQUIRE( matrix[1][1] == 2 );
+	matrix.fill("B.txt");
+	REQUIRE( matrix[0][0] == 2 );
+	REQUIRE( matrix[0][1] == 2 );
+	REQUIRE( matrix[1][0] == 1 );
+	REQUIRE( matrix[1][1] == 1 );
+	
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
