@@ -54,7 +54,7 @@ SCENARIO("Matrix *", "[multiplication]") {
 	REQUIRE(result[0][0] == expected[0][0]);
 }
 
-SCENARIO("Matrix[]", "[ operator [] ]"){
+SCENARIO("Matrix[]", "[ get line "){
 	Matrix matrix(2, 2);
 	matrix.fill("A2x2.txt");
 	int first_line[2] = {1, 1};
