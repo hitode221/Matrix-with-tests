@@ -27,8 +27,8 @@ SCENARIO ("Matrix fill", "[fill]") {
 	matrix.fill("C.txt");
 	REQUIRE( matrix[0][0] == 1 );
 	REQUIRE( matrix[0][1] == 0 );
-	REQUIRE( matrix[1][0] == 1 );
-	REQUIRE( matrix[1][1] == 0 );
+	REQUIRE( matrix[1][0] == 0 );
+	REQUIRE( matrix[1][1] == 1 );
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
