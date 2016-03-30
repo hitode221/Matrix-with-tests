@@ -1,6 +1,7 @@
 #include <matrix.h>
 #include <catch.hpp>
 #include <fstream>
+#include <iostream>
 
 SCENARIO("Matrix init", "[init]") {
 	for (int i = 1; i < 10; i++)
@@ -72,6 +73,12 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 	REQUIRE ( matrix [0][1] == first_line[1]);
 	REQUIRE( matrix[1][0] == second_line[0] );
 	REQUIRE ( matrix [1][1] == second_line[1]);
+}
+
+SCENARIO("print", "[print]"){
+	Matrix matrix(2, 2);
+	matrix.fill("A.txt");
+	matrix.print();
 }
 
 
