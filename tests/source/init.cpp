@@ -51,7 +51,17 @@ SCENARIO("Matrix *", "[multiplication]") {
 	Matrix expected(2, 2);
 	expected.fill("A*B2x2.txt");
 	Matrix result = A * B;
-	REQUIRE(result[0][0] == expected[0][0]);
+	REQUIRE(result == expected);
+}
+SCENARIO("Matrix get line by index", "[get_line]") {
+	Matrix matrix(2, 2);
+	matrix.fill("A2x2.txt");
+	int first_line[2] = {1, 1};
+	int second_line[2] = {2, 2};
+	REQUIRE( matrix[0][0] == first_line[0] );
+	REQUIRE ( matrix [0][1] == first_line[1]);
+	REQUIRE( matrix[1][0] == second_line[0] );
+	REQUIRE ( matrix [1][1] == second_line[1])
 }
 
 
