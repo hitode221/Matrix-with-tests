@@ -29,9 +29,6 @@ SCENARIO ("Matrix fill", "[fill]") {
 	REQUIRE( matrix[0][1] == 0 );
 	REQUIRE( matrix[1][0] == 1 );
 	REQUIRE( matrix[1][1] == 0 );
-
-	
-	
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
