@@ -24,6 +24,13 @@ SCENARIO ("Matrix fill", "[fill]") {
 	REQUIRE( matrix[0][1] == 2 );
 	REQUIRE( matrix[1][0] == 1 );
 	REQUIRE( matrix[1][1] == 1 );
+	matrix.fill("C.txt");
+	REQUIRE( matrix[0][0] == 1 );
+	REQUIRE( matrix[0][1] == 0 );
+	REQUIRE( matrix[1][0] == 1 );
+	REQUIRE( matrix[1][1] == 0 );
+
+	
 	
 }
 
