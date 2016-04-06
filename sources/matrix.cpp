@@ -5,14 +5,15 @@ using namespace std;
 #ifndef MATR_CPP
 #define MATR_CPP
 
+
 template <class T>	
-Matrix <T> :: Matrix(int _lines, int _columns) : elements(new T*[_lines]), lines(_lines), columns(_columns) {
+Matrix<T>::Matrix(int _lines, int _columns) : elements(new T*[_lines]), lines(_lines), columns(_columns) {
 	for (int i = 0; i < lines; i++){
 		elements[i] = new T[columns];
 	}
 }
 template <typename T>
-Matrix<T> :: Matrix(const Matrix &matrix) : elements(new T*[matrix.lines]), lines(matrix.lines), columns(matrix.columns) {
+Matrix<T>::Matrix(const Matrix &matrix) : elements(new T*[matrix.lines]), lines(matrix.lines), columns(matrix.columns) {
 	for (int i = 0; i < lines; i++){
 		elements[i] = new T[columns];
 		for (int j = 0; j < columns; j++){
@@ -21,7 +22,7 @@ Matrix<T> :: Matrix(const Matrix &matrix) : elements(new T*[matrix.lines]), line
 	}
 }
 template <class T>
-void Matrix<T> :: swapMatrix(Matrix <T> & second){
+void Matrix<T>:: swapMatrix(Matrix <T> & second){
 	swap(lines, second.lines);
 	swap(columns, second.columns);
 	swap(elements, second.elements);
@@ -49,7 +50,7 @@ void Matrix<T> :: print() const {
 	}
 }
 template <class T>
-int Matrix<T> :: getLines() const{
+int Matrix<T>::getLines() const{
 		return lines;
 }
 template <class T>
