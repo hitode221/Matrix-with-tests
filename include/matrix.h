@@ -5,26 +5,26 @@
 #pragma once
 #include <fstream>
 #include <iostream>
-
+template <class T>
 class Matrix {
 public:
 	Matrix() : lines(0), columns(0), elements(nullptr) {}
 	Matrix(int _lines, int _columns);
-	Matrix(const Matrix& second);
-	Matrix& operator= (const Matrix& second);
-	void swapMatrix (Matrix& second);
-	void fillRandom();
+	Matrix(const Matrix <T> & second);
+	Matrix& operator= (const Matrix <T> & second);
+	void swapMatrix (Matrix <T> & second);
 	void fill(char *filename);
 	void print() const;
-	int* operator[](int index) const;
-	Matrix operator+(const Matrix& m) const; 
-	Matrix operator*(const Matrix& m) const;
-	bool operator==(const Matrix &matrix) const; 
+	T* operator[](int index) const;
+	Matrix operator+(const Matrix <T> & m) const; 
+	Matrix operator*(const Matrix <T> & m) const;
+	bool operator==(const Matrix <T> &matrix) const; 
 	int getLines() const;
 	int getColumns() const;
 	~Matrix();
 private:
-	int lines, columns, **elements;
+	int lines, columns;
+	T **elements;
 };
 
 
