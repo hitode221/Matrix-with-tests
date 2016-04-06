@@ -8,7 +8,7 @@ SCENARIO("Matrix init", "[init]") {
 		for (int j = 1; j < 10; j++){
 			auto rows = i;
 			auto columns = j;
-			Matrix<T> matrix(rows, columns);
+			Matrix<int> matrix(rows, columns);
 			REQUIRE(matrix.getLines() == rows);
 			REQUIRE(matrix.getColumns() == columns);
 		}
