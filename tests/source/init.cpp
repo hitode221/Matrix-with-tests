@@ -15,8 +15,8 @@ SCENARIO("Matrix init", "[init]") {
 }
 SCENARIO ("Matrix fill", "[fill]") {
 	Matrix<int> matrix(2, 2);
-	fstream file("A.txt");
-	file >> matrix;
+	ifstream file("A.txt");
+	REQUIRE(file >> matrix);
 	REQUIRE( matrix[0][0] == 1 );
 	REQUIRE( matrix[0][1] == 1 );
 	REQUIRE( matrix[1][0] == 2 );
