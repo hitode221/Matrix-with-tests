@@ -131,14 +131,12 @@ ostream & operator<<(ostream & output, const Matrix<T> & matrix) {
 }
 
 template <typename T>
-istream & operator>>(istream & input, Matrix<T> & matrix) {
-	for (int i = 0; i < matrix.lines; i++) {
-		for (int j = 0; j < matrix.columns; i++) {
-			if (!(input >> matrix.elements[i][j])) {
-				throw "error";
-				}
-			}
+std::istream& operator>> (std::istream& stream, Matrix<T>& matrix){
+	for (unsigned int i = 0; i < matrix.lines; i++){
+		for (unsigned int j = 0; j < matrix.columns; j++){
+			stream >> matrix.elements[i][j];
 		}
-	return input;
+	}
+	return stream;
 }
 #endif
