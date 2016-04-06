@@ -8,7 +8,7 @@
 using namespace std;
 
 template <typename T>
-class CMatrix;
+class Matrix;
 
 template <class T>
 ostream & operator<<(ostream & output, const Matrix<T> & matrix);
