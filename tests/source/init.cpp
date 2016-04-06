@@ -34,7 +34,7 @@ SCENARIO ("Matrix =", "[operator =]"){
 	REQUIRE( first[1][1] == 2 );
 }
 
-/*SCENARIO("Matrix +", "[addition]") {
+SCENARIO("Matrix +", "[addition]") {
 	Matrix<int> A(2, 2);
 	A.fill("A.txt");
 	Matrix<int> B(2, 2);
@@ -43,9 +43,9 @@ SCENARIO ("Matrix =", "[operator =]"){
 	expected.fill("A+B.txt");
 	Matrix<int> result = A + B;
 	REQUIRE(result == expected);
-}*/
+}
 
-/*SCENARIO("Matrix *", "[multiplication]") {
+SCENARIO("Matrix *", "[multiplication]") {
 	Matrix<int> A(2, 2);
 	A.fill("A.txt");
 	Matrix<int> B(2, 2);
@@ -54,7 +54,7 @@ SCENARIO ("Matrix =", "[operator =]"){
 	expected.fill("A*B.txt");
 	Matrix<int> result = A * B;
 	REQUIRE(result == expected);
-}*/
+}
 SCENARIO("Matrix get line by index", "[get_line]") {
 	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
