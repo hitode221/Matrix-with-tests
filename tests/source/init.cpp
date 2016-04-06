@@ -80,6 +80,6 @@ SCENARIO("print", "[print]"){
 	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
 	cout << matrix;
-}*/
+}
 
 
