@@ -2,6 +2,9 @@
 #include "matrix.h"
 using namespace std;
 
+#ifndef MATR_CPP
+#define MATR_CPP
+
 template <typename T>	
 Matrix <T> :: Matrix(int _lines, int _columns) : elements(new T*[_lines]), lines(_lines), columns(_columns) {
 	for (int i = 0; i < lines; i++){
@@ -114,3 +117,4 @@ Matrix<T> :: ~Matrix(){
 	}
 	delete [] elements;
 }
+#endif
