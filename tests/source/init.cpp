@@ -51,7 +51,7 @@ SCENARIO("Matrix +", "[addition]") {
 	B.fill("B.txt");
 	Matrix<int> expected(2, 2);
 	expected.fill("A+B.txt");
-	Matrix result = A + B;
+	Matrix<int> result = A + B;
 	REQUIRE(result == expected);
 }
 
@@ -62,7 +62,7 @@ SCENARIO("Matrix *", "[multiplication]") {
 	B.fill("B.txt");
 	Matrix<int> expected(2, 2);
 	expected.fill("A*B.txt");
-	Matrix result<int> = A * B;
+	Matrix<int> result = A * B;
 	REQUIRE(result == expected);
 }
 SCENARIO("Matrix get line by index", "[get_line]") {
