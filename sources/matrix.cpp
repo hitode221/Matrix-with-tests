@@ -5,10 +5,10 @@ using namespace std;
 #ifndef MATR_CPP
 #define MATR_CPP
 
-template <typename T>	
-Matrix <int> :: Matrix(int _lines, int _columns) : elements(new int*[_lines]), lines(_lines), columns(_columns) {
+template <class T>	
+Matrix <T> :: Matrix(int _lines, int _columns) : elements(new T*[_lines]), lines(_lines), columns(_columns) {
 	for (int i = 0; i < lines; i++){
-		elements[i] = new int[columns];
+		elements[i] = new T[columns];
 	}
 }
 template <typename T>
