@@ -1,7 +1,12 @@
-#ifndef Matrix_h
-#define Matrix_h
-#include <fstream>
+#pragma once
+#ifndef MATR_H
+#define MATR_H
+
 #include <iostream>
+#include <fstream>
+
+template <typename T>
+class CMatrix;
 
 template <class T>
 class Matrix {
