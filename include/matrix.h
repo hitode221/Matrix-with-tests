@@ -6,7 +6,7 @@
 template <class T>
 class Matrix {
 public:
-	Matrix<T>() : lines(0), columns(0), elements(nullptr) {}
+	Matrix() : lines(0), columns(0), elements(nullptr) {}
 	Matrix(int _lines, int _columns);
 	Matrix(const Matrix <T> & second);
 	Matrix& operator= (const Matrix <T> & second);
