@@ -5,8 +5,16 @@
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 template <typename T>
 class CMatrix;
+
+template <class T>
+ostream & operator<<(ostream & output, const Matrix<T> & matrix);
+
+template <class T>
+istream & operator>>(istream & input, Matrix<T> & matrix);
 
 template <class T>
 class Matrix {
@@ -25,6 +33,9 @@ public:
 	int getLines() const;
 	int getColumns() const;
 	~Matrix();
+	
+	friend ostream & operator<< <>(std::ostream & output, const Matrix<T> & matrix); 
+	friend istream & operator>> <>(std::istream & input, Matrix<T> & matrix); 
 private:
 	int lines, columns;
 	T **elements;
