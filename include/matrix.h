@@ -30,5 +30,6 @@ private:
 	T **elements;
 };
 
+#include "matrix.cpp"
 
 #endif
