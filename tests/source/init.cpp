@@ -69,8 +69,8 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 SCENARIO("print", "[print]"){
 	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
-	//cout << matrix;
-	matrix.print();
+	cout << matrix;
+	//matrix.print();
 }
 
 
