@@ -1,29 +1,30 @@
 #include <time.h>
 #include "matrix.h"
 using namespace std;
-	
-Matrix :: Matrix(int _lines, int _columns) : elements(new int *[_lines]), lines(_lines), columns(_columns) {
+
+template <typename T>	
+Matrix <T> :: Matrix(int _lines, int _columns) : elements(new T*[_lines]), lines(_lines), columns(_columns) {
 	for (int i = 0; i < lines; i++){
-		elements[i] = new int[columns];
-		for (int j = 0; j < columns; j++){
-			elements[i][j] = 0;
-		}
+		elements[i] = new T[columns];
 	}
 }
-Matrix :: Matrix(const Matrix &matrix) : elements(new int *[matrix.lines]), lines(matrix.lines), columns(matrix.columns) {
+template <typename T>
+Matrix<T> :: Matrix(const Matrix &matrix) : elements(new T*[matrix.lines]), lines(matrix.lines), columns(matrix.columns) {
 	for (int i = 0; i < lines; i++){
-		elements[i] = new int[columns];
+		elements[i] = new T[columns];
 		for (int j = 0; j < columns; j++){
 			elements[i][j] = matrix.elements[i][j];
 		}
 	}
 }
-void Matrix :: swapMatrix(Matrix &second){
+template <class T>
+void Matrix<T> :: swapMatrix(Matrix <T> & second){
 	swap(lines, second.lines);
 	swap(columns, second.columns);
 	swap(elements, second.elements);
 }
-void Matrix :: fill(char *filename){
+template <class T>
+void Matrix<T> :: fill(char *filename){
 	fstream file(filename);
 	if (!file.is_open()){
 		cout << "Error opening file";
@@ -35,13 +36,8 @@ void Matrix :: fill(char *filename){
 		}
 	}
 }
-void Matrix :: fillRandom(){
-	srand (time(NULL));
-	for (int i = 0; i < lines; i++)
-		for (int j = 0; j < columns; j++)
-			elements[i][j] = rand() %100;
-}
-void Matrix :: print() const {
+template <class T>
+void Matrix<T> :: print() const {
 	for (int i = 0; i < lines; i++){
 		for (int j = 0; j < columns; j++){
 			cout << elements[i][j] << " ";
@@ -49,26 +45,31 @@ void Matrix :: print() const {
 		cout << "\n";
 	}
 }
-int Matrix :: getLines() const{
+template <class T>
+int Matrix<T> :: getLines() const{
 		return lines;
 }
-int Matrix :: getColumns() const{
+template <class T>
+int Matrix<T> :: getColumns() const{
 		return columns;
 }
-Matrix& Matrix :: operator=(const Matrix& second){
+template <class T>
+Matrix<T> & Matrix<T> :: operator=(const Matrix<T> & second){
 	if (this != &second) {
 		Matrix(second).swapMatrix(*this);
 	}
 	return *this;
 }
-int* Matrix :: operator[] (int index) const{
+template <class T>
+T* Matrix<T> :: operator[] (int index) const{
 	return elements[index];
 }
-Matrix Matrix :: operator+(const Matrix& m) const{
+template <class T>
+Matrix<T> Matrix<T> :: operator+(const Matrix& m) const{
 	if (columns != m.columns || lines != m.lines){ 
 		throw invalid_argument("Matrix cannot be added");
 	}
-	Matrix temp(lines, columns);
+	Matrix <T> temp(lines, columns);
 	for (int i = 0; i < lines; i++){
 		for (int j = 0; j < columns; j++){
 			temp[i][j] = elements[i][j] + m[i][j];
@@ -76,11 +77,12 @@ Matrix Matrix :: operator+(const Matrix& m) const{
 	}
 	return temp;
 }
-Matrix Matrix :: operator*(const Matrix &m) const{
+template <class T>
+Matrix<T> Matrix<T> :: operator*(const Matrix <T> &m) const{
 	if (columns != m.lines){
 		throw invalid_argument("Matrix cannot be multiplicated");
 	}
-	Matrix result(lines, m.columns);
+	Matrix <T> result(lines, m.columns);
 	for (int i = 0; i < lines; i++){
 		for (int j = 0; j < m.columns; j++){
 			result[i][j] = 0;
@@ -91,7 +93,8 @@ Matrix Matrix :: operator*(const Matrix &m) const{
 	}
 	return result;
 }
-bool Matrix :: operator==(const Matrix & matrix) const{
+template <class T>
+bool Matrix<T> :: operator==(const Matrix <T> & matrix) const{
     if ( lines != matrix.lines || columns != matrix.columns ) {
         return false;
     }
@@ -104,7 +107,8 @@ bool Matrix :: operator==(const Matrix & matrix) const{
     }
     return true;
 }
-Matrix :: ~Matrix(){
+template <class T>
+Matrix<T> :: ~Matrix(){
 	for (int i = 0; i < lines; i++){
 		delete [] elements[i];
 	}
