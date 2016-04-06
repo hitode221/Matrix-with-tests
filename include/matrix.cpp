@@ -134,7 +134,7 @@ template <typename T>
 istream & operator>>(istream & input, Matrix<T> & matrix) {
 	for (int i = 0; i < matrix.lines; i++) {
 		for (int j = 0; j < matrix.columns; i++) {
-			if (!(input >> matrix.matrix[i][j])) {
+			if (!(input >> matrix.elements[i][j])) {
 				throw "error";
 				}
 			}
