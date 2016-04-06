@@ -120,14 +120,14 @@ Matrix<T> :: ~Matrix(){
 }
 
 template <typename T>
-ostream & operator<<(ostream & output, const Matrix<T> & matrix) {
-	for (int i = 0; i < matrix.lines; i++) {
-		for (int j = 0; j < matrix.columns; i++) {
-			output << matrix.elements[i][j] << " ";
+std::ostream& operator<< (std::ostream& stream, const Matrix<T>& matrix){
+	for (unsigned int i = 0; i < matrix.lines; i++){
+		for (unsigned int j = 0; j < matrix.columns; j++){
+			stream << matrix.elements[i][j] << " ";
 		}
-		output << "\n";
+		stream << '\n';
 	}
-	return output;
+	return stream;
 }
 
 template <typename T>
