@@ -123,11 +123,10 @@ template <typename T>
 ostream & operator<<(ostream & output, const Matrix<T> & matrix) {
 	for (int i = 0; i < matrix.lines; i++) {
 		for (int j = 0; j < matrix.columns; i++) {
-			output << x.elements[i][j] << " ";
+			output << matrix.elements[i][j] << " ";
 		}
 		output << "\n";
 	}
-
 	return output;
 }
 
@@ -138,8 +137,6 @@ istream & operator>>(istream & input, Matrix<T> & matrix) {
 			input >> matrix.elements[i][j];
 			}
 		}
-	}
-
 	return input;
 }
 #endif
