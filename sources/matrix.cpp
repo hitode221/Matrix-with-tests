@@ -6,9 +6,9 @@ using namespace std;
 #define MATR_CPP
 
 template <typename T>	
-Matrix <T> :: Matrix(int _lines, int _columns) : elements(new T*[_lines]), lines(_lines), columns(_columns) {
+Matrix <int> :: Matrix(int _lines, int _columns) : elements(new int*[_lines]), lines(_lines), columns(_columns) {
 	for (int i = 0; i < lines; i++){
-		elements[i] = new T[columns];
+		elements[i] = new int[columns];
 	}
 }
 template <typename T>
