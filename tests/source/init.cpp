@@ -13,7 +13,7 @@ SCENARIO("Matrix init", "[init]") {
 			REQUIRE(matrix.getColumns() == columns);
 		}
 }
-/*SCENARIO ("Matrix fill", "[fill]") {
+SCENARIO ("Matrix operator >>", "[fill]") {
 	Matrix<int> matrix(2, 2);
 	ifstream file("A.txt");
 	REQUIRE(file >> matrix);
@@ -21,16 +21,6 @@ SCENARIO("Matrix init", "[init]") {
 	REQUIRE( matrix[0][1] == 1 );
 	REQUIRE( matrix[1][0] == 2 );
 	REQUIRE( matrix[1][1] == 2 );
-	/*matrix.fill("B.txt");
-	REQUIRE( matrix[0][0] == 2 );
-	REQUIRE( matrix[0][1] == 2 );
-	REQUIRE( matrix[1][0] == 1 );
-	REQUIRE( matrix[1][1] == 1 );
-	matrix.fill("C.txt");
-	REQUIRE( matrix[0][0] == 1 );
-	REQUIRE( matrix[0][1] == 0 );
-	REQUIRE( matrix[1][0] == 0 );
-	REQUIRE( matrix[1][1] == 1 );
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
@@ -80,6 +70,6 @@ SCENARIO("print", "[print]"){
 	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
 	cout << matrix;
-}*/
+}
 
 
