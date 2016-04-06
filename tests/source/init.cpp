@@ -14,7 +14,7 @@ SCENARIO("Matrix init", "[init]") {
 		}
 }
 SCENARIO ("Matrix fill", "[fill]") {
-	Matrix matrix(2, 2);
+	Matrix<int> matrix(2, 2);
 	fstream file("A.txt");
 	file >> matrix;
 	REQUIRE( matrix[0][0] == 1 );
@@ -34,8 +34,8 @@ SCENARIO ("Matrix fill", "[fill]") {
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
-	Matrix first(2, 2);
-	Matrix second(2, 2);
+	Matrix<int> first(2, 2);
+	Matrix<int> second(2, 2);
 	second.fill("A.txt");
 	first = second;
 	REQUIRE( first[0][0] == 1 );
@@ -45,28 +45,28 @@ SCENARIO ("Matrix =", "[operator =]"){
 }
 
 SCENARIO("Matrix +", "[addition]") {
-	Matrix A(2, 2);
+	Matrix<int> A(2, 2);
 	A.fill("A.txt");
-	Matrix B(2, 2);
+	Matrix<int> B(2, 2);
 	B.fill("B.txt");
-	Matrix expected(2, 2);
+	Matrix<int> expected(2, 2);
 	expected.fill("A+B.txt");
 	Matrix result = A + B;
 	REQUIRE(result == expected);
 }
 
 SCENARIO("Matrix *", "[multiplication]") {
-	Matrix A(2, 2);
+	Matrix<int> A(2, 2);
 	A.fill("A.txt");
-	Matrix B(2, 2);
+	Matrix<int> B(2, 2);
 	B.fill("B.txt");
-	Matrix expected(2, 2);
+	Matrix<int> expected(2, 2);
 	expected.fill("A*B.txt");
-	Matrix result = A * B;
+	Matrix result<int> = A * B;
 	REQUIRE(result == expected);
 }
 SCENARIO("Matrix get line by index", "[get_line]") {
-	Matrix matrix(2, 2);
+	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
 	int first_line[2] = {1, 1};
 	int second_line[2] = {2, 2};
@@ -77,9 +77,9 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 }
 
 SCENARIO("print", "[print]"){
-	Matrix matrix(2, 2);
+	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
-	matrix.print();
+	cout << matrix;
 }*/
 
 
