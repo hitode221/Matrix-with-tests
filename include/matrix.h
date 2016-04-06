@@ -1,10 +1,8 @@
 #ifndef Matrix_h
 #define Matrix_h
-
-
-#pragma once
 #include <fstream>
 #include <iostream>
+
 template <class T>
 class Matrix {
 public:
