@@ -13,7 +13,7 @@ SCENARIO("Matrix init", "[init]") {
 			REQUIRE(matrix.getColumns() == columns);
 		}
 }
-SCENARIO ("Matrix operator >>", "[fill]") {
+SCENARIO("Matrix fill", "[fill]") {
 	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
 	REQUIRE( matrix[0][0] == 1 );
