@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "exception.cpp"
+#include "exception.h"
 
 using namespace std;
 
