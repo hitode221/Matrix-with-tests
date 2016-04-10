@@ -38,7 +38,7 @@ void Matrix<T> :: fill(char *filename) throw(InitException) {
 			if (file.eof()){ 
 				throw InitException();
 			}
-			file >> matrix.elements[i][j];
+			file >> elements[i][j];
 		}
 	}
 }
