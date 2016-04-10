@@ -1,5 +1,6 @@
 
 #pragma once
+#include <stdexcept>
 #include "iostream"
 
 class MatrixException : public std :: exception{
