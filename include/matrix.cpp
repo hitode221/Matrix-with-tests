@@ -28,7 +28,7 @@ void Matrix<T>:: swapMatrix(Matrix <T> & second){
 	swap(elements, second.elements);
 }
 template <class T>
-void Matrix<T> :: fill(char *filename){
+void Matrix<T> :: fill(char *filename) throw(InitException) {
 	fstream file(filename);
 	if (!file.is_open()){
 		throw InitException();
