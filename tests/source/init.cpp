@@ -44,28 +44,49 @@ SCENARIO ("Matrix =", "[operator =]"){
 }
 
 SCENARIO("Matrix +", "[addition]") {
+	bool flag = false;
 	Matrix<int> A(2, 2);
 	A.fill("A.txt");
 	Matrix<int> B(2, 2);
 	B.fill("B.txt");
+	Matrix<int> C(3, 3);
+	C.fill("D.txt");
 	Matrix<int> expected(2, 2);
 	expected.fill("A+B.txt");
 	Matrix<int> result = A + B;
 	REQUIRE(result == expected);
+	try {
+		A+C;
+	}
+	catch(MatrixException &e){
+		flag = true;
+	}
+	REQUIRE(flag);
 }
 
 SCENARIO("Matrix *", "[multiplication]") {
+	bool flag = false;
 	Matrix<int> A(2, 2);
 	A.fill("A.txt");
 	Matrix<int> B(2, 2);
 	B.fill("B.txt");
+	Matrix<int> C(3, 3);
+	C.fill("D.txt");
 	Matrix<int> expected(2, 2);
 	expected.fill("A*B.txt");
 	Matrix<int> result = A * B;
 	REQUIRE(result == expected);
+	try {
+		A*C;
+	}
+	catch(MatrixException &e){
+		flag = true;
+	}
+	REQUIRE(flag);
 }
 SCENARIO("Matrix get line by index", "[get_line]") {
 	Matrix<int> matrix(2, 2);
+	bool flag = false;
 	matrix.fill("A.txt");
 	int first_line[2] = {1, 1};
 	int second_line[2] = {2, 2};
@@ -73,6 +94,13 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 	REQUIRE ( matrix [0][1] == first_line[1]);
 	REQUIRE( matrix[1][0] == second_line[0] );
 	REQUIRE ( matrix [1][1] == second_line[1]);
+	try{
+		matrix[3][1] = 1;
+	}
+	catch (MatrixException &e){
+		flag = true;
+	}
+	REQUIRE(flag);
 }
 SCENARIO("operator==", "[operator==]"){
 	Matrix <int> A(2, 2); 
@@ -85,7 +113,6 @@ SCENARIO("print", "[print]"){
 	Matrix<int> matrix(2, 2);
 	matrix.fill("A.txt");
 	cout << matrix;
-	//matrix.print();
 }
 
 
