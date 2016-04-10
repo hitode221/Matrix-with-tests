@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "exception.cpp"
 
 using namespace std;
 
@@ -24,18 +25,18 @@ public:
 	Matrix(const Matrix <T> & second);
 	Matrix& operator= (const Matrix <T> & second);
 	void swapMatrix (Matrix <T> & second);
-	void fill(char *filename);
+	void fill(char *filename) throw(InitException);
 	void print() const;
-	T* operator[](int index) const;
-	Matrix operator+(const Matrix <T> & m) const; 
-	Matrix operator*(const Matrix <T> & m) const;
+	T* operator[](int index) const throw(IndexException);
+	Matrix operator+(const Matrix <T> & m) const throw(SizesException); 
+	Matrix operator*(const Matrix <T> & m) const throw(SizesException);
 	bool operator==(const Matrix <T> &matrix) const; 
 	int getLines() const;
 	int getColumns() const;
 	~Matrix();
 	
 	friend ostream & operator<< <>(std::ostream & output, const Matrix<T> & matrix); 
-	friend istream & operator>> <>(std::istream & input, Matrix<T> & matrix); 
+	friend istream & operator>> <>(std::istream & input, Matrix<T> & matrix) throw(InitException); 
 private:
 	int lines, columns;
 	T **elements;
