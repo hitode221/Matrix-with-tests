@@ -15,12 +15,21 @@ SCENARIO("Matrix init", "[init]") {
 }
 SCENARIO("Matrix fill", "[fill]") {
 	Matrix<int> matrix(2, 2);
+	Matrix<int> matrixB(3, 3);
+	bool flag = false;
 	fstream file("A.txt");
 	file >> matrix;
 	REQUIRE( matrix[0][0] == 1 );
 	REQUIRE( matrix[0][1] == 1 );
 	REQUIRE( matrix[1][0] == 2 );
 	REQUIRE( matrix[1][1] == 2 );
+	try {
+		file >> matrixB;
+	}
+	catch (MatrixException &e){
+		flag = true;
+	}
+	REQUIRE(flag);
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
