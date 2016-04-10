@@ -36,7 +36,7 @@ public:
 	~Matrix();
 	
 	friend ostream & operator<< <>(std::ostream & output, const Matrix<T> & matrix); 
-	friend istream & operator>> <>(std::istream & input, Matrix<T> & matrix) throw(InitException); 
+	friend istream & operator>> <>(std::istream & input, Matrix<T> & matrix); 
 private:
 	int lines, columns;
 	T **elements;
