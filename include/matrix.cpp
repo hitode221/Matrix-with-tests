@@ -134,7 +134,7 @@ std::ostream& operator<< (std::ostream& stream, const Matrix<T>& matrix){
 }
 
 template <typename T>
-std::istream& operator>> (std::istream& stream, Matrix<T>& matrix) throw (InitException){
+std::istream& operator>> (std::istream& stream, Matrix<T>& matrix){
 	for (unsigned int i = 0; i < matrix.lines; i++){
 		for (unsigned int j = 0; j < matrix.columns; j++){
 			if (stream.eof()) 
