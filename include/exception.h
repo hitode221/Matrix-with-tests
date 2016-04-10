@@ -6,8 +6,8 @@ using namespace std;
 
 class MatrixException : public std :: exception{
 public: 
-	MatrixException() : exception("Unknown exception"){}
-	MatrixException(const char * const &_message) : std :: exception(_message){} 
+	MatrixException() : std :: exception(invalid_argument("Unknown exception")){}
+	MatrixException(const char *_message) : std :: exception(invalid_argument(_message)){} 
 };
 
 class SizesException : public MatrixException{
