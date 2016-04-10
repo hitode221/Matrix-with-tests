@@ -75,9 +75,10 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 	REQUIRE ( matrix [1][1] == second_line[1]);
 }
 SCENARIO("operator==", "[operator==]"){
-	Matrix <int> A, B;
+	Matrix <int> A(2, 2); 
+	Matrix <int> B(2, 2);
 	A.fill("A.txt");
-	B.fill("A.text");
+	B.fill("A.txt");
 	REQUIRE(A==B);
 }
 SCENARIO("print", "[print]"){
