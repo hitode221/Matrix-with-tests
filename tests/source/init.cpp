@@ -27,6 +27,9 @@ SCENARIO("Matrix fill", "[fill]") {
 	REQUIRE( matrix[1][1] == 2 );
 	fileC >> matrixC;
 	REQUIRE(matrixC[0][0] == 'a');
+	REQUIRE(matrixC[0][1] == 'b');
+	REQUIRE(matrix[1][0] == 'c');
+	REQUIRE(matrix[1][1] == 'd');
 	try {
 		file >> matrixB;
 	}
@@ -34,6 +37,15 @@ SCENARIO("Matrix fill", "[fill]") {
 		flag = true;
 	}
 	REQUIRE(flag);
+	flag = false;
+	try {
+		fileC >> matrix;
+	}
+	catch (InitException &e){
+		flag = true;
+	}
+	REQUIRE(flag);
+	}
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
