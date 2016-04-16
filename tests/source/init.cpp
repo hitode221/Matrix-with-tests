@@ -127,8 +127,10 @@ SCENARIO("operator==", "[operator==]"){
 }
 SCENARIO("print", "[print]"){
 	Matrix<int> matrix(2, 2);
+	Matrix <char> matrixC(2, 2);
 	matrix.fill("A.txt");
-	cout << matrix;
+	matrixC.fill("Char1.txt");
+	cout << matrix << matrixC;
 }
 
 
