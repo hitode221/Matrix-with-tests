@@ -26,7 +26,7 @@ SCENARIO("Matrix fill", "[fill]") {
 	try {
 		file >> matrixB;
 	}
-	catch (MatrixException &e){
+	catch (InitException &e){
 		flag = true;
 	}
 	REQUIRE(flag);
@@ -58,7 +58,7 @@ SCENARIO("Matrix +", "[addition]") {
 	try {
 		A+C;
 	}
-	catch(MatrixException &e){
+	catch(SizesException &e){
 		flag = true;
 	}
 	REQUIRE(flag);
@@ -79,7 +79,7 @@ SCENARIO("Matrix *", "[multiplication]") {
 	try {
 		A*C;
 	}
-	catch(MatrixException &e){
+	catch(SizesException &e){
 		flag = true;
 	}
 	REQUIRE(flag);
@@ -97,7 +97,7 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 	try{
 		matrix[3][1] = 1;
 	}
-	catch (MatrixException &e){
+	catch (IndexException &e){
 		flag = true;
 	}
 	REQUIRE(flag);
