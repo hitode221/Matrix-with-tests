@@ -15,14 +15,18 @@ SCENARIO("Matrix init", "[init]") {
 }
 SCENARIO("Matrix fill", "[fill]") {
 	Matrix<int> matrix(2, 2);
+	Matrix <char> matrixC(2, 2);
 	Matrix<int> matrixB(3, 3);
 	bool flag = false;
 	fstream file("A.txt");
+	fstream fileC("Char1.txt");
 	file >> matrix;
 	REQUIRE( matrix[0][0] == 1 );
 	REQUIRE( matrix[0][1] == 1 );
 	REQUIRE( matrix[1][0] == 2 );
 	REQUIRE( matrix[1][1] == 2 );
+	fileC >> matrixC;
+	REQUIRE(matrixC[0][0] == 'a');
 	try {
 		file >> matrixB;
 	}
