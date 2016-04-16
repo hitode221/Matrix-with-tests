@@ -57,6 +57,14 @@ SCENARIO ("Matrix =", "[operator =]"){
 	REQUIRE( first[0][1] == 1 );
 	REQUIRE( first[1][0] == 2 );
 	REQUIRE( first[1][1] == 2 );
+	Matrix<char> firstC(2, 2);
+	Matrix<char> secondC(2, 2);
+	second.fill("Char1.txt");
+	firstC = secondC;
+	REQUIRE( firstC[0][0] == 'a' );
+	REQUIRE( firstC[0][1] == 'b' );
+	REQUIRE( firstC[1][0] == 'c' );
+	REQUIRE( firstC[1][1] == 'd' );
 }
 
 SCENARIO("Matrix +", "[addition]") {
