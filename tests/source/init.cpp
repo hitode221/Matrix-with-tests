@@ -45,7 +45,7 @@ SCENARIO("Matrix fill", "[fill]") {
 		flag = true;
 	}
 	REQUIRE(flag);
-	}
+
 }
 
 SCENARIO ("Matrix =", "[operator =]"){
