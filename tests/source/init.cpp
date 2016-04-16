@@ -28,8 +28,8 @@ SCENARIO("Matrix fill", "[fill]") {
 	fileC >> matrixC;
 	REQUIRE(matrixC[0][0] == 'a');
 	REQUIRE(matrixC[0][1] == 'b');
-	REQUIRE(matrix[1][0] == 'c');
-	REQUIRE(matrix[1][1] == 'd');
+	REQUIRE(matrixC[1][0] == 'c');
+	REQUIRE(matrixC[1][1] == 'd');
 	try {
 		file >> matrixB;
 	}
