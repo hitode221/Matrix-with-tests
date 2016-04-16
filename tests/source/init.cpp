@@ -110,10 +110,18 @@ SCENARIO("Matrix *", "[multiplication]") {
 }
 SCENARIO("Matrix get line by index", "[get_line]") {
 	Matrix<int> matrix(2, 2);
+	Matrix<char> matrixC(2, 2);
 	bool flag = false;
 	matrix.fill("A.txt");
+	matrixC.fill("Char1.txt");
 	int first_line[2] = {1, 1};
 	int second_line[2] = {2, 2};
+	char first_line_c[2] = "ab";
+	char second_line_c[2] = "cd";
+	REQUIRE( matrixC[0][0] == first_line_c[0] );
+	REQUIRE ( matrixC [0][1] == first_line_c[1]);
+	REQUIRE( matrixC[1][0] == second_line_c[0] );
+	REQUIRE ( matrixC [1][1] == second_line_c[1]);
 	REQUIRE( matrix[0][0] == first_line[0] );
 	REQUIRE ( matrix [0][1] == first_line[1]);
 	REQUIRE( matrix[1][0] == second_line[0] );
