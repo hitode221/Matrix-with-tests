@@ -59,7 +59,7 @@ SCENARIO ("Matrix =", "[operator =]"){
 	REQUIRE( first[1][1] == 2 );
 	Matrix<char> firstC(2, 2);
 	Matrix<char> secondC(2, 2);
-	second.fill("Char1.txt");
+	secondC.fill("Char1.txt");
 	firstC = secondC;
 	REQUIRE( firstC[0][0] == 'a' );
 	REQUIRE( firstC[0][1] == 'b' );
