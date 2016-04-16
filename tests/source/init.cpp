@@ -116,8 +116,8 @@ SCENARIO("Matrix get line by index", "[get_line]") {
 	matrixC.fill("Char1.txt");
 	int first_line[2] = {1, 1};
 	int second_line[2] = {2, 2};
-	char first_line_c[2] = "ab";
-	char second_line_c[2] = "cd";
+	char first_line_c[2] = {'a', 'b'};
+	char second_line_c[2] = {'c', 'd'};
 	REQUIRE( matrixC[0][0] == first_line_c[0] );
 	REQUIRE ( matrixC [0][1] == first_line_c[1]);
 	REQUIRE( matrixC[1][0] == second_line_c[0] );
